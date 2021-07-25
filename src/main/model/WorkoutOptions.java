@@ -3,6 +3,9 @@ package model;
 import java.util.ArrayList;
 import java.util.List;
 
+//Represents a list of the possible activities that the generator can select from. Contains fields that
+//represent the options split by intensity levels, the final workout list, a list of the final workout list's
+//activity names and 3 initial exercises
 public class WorkoutOptions {
     private List<Activity> options;
     private List<Activity> easyOptions;
@@ -14,7 +17,8 @@ public class WorkoutOptions {
     private Activity act2;
     private Activity act3;
 
-    //EFFECTS: constructs a new list of workout options to choose from
+    //EFFECTS: constructs a new list of workout options to choose from and initializes the possible options with 3
+    // starting activities to choose from (more added later)
     public WorkoutOptions() {
         options = new ArrayList<>();
         easyOptions = new ArrayList<>();

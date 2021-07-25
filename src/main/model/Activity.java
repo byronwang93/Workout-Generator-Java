@@ -1,5 +1,7 @@
 package model;
 
+// Represents an activity with a description, an intensity level, a muscle group
+// and whether or not it needs equipment
 public class Activity {
     private String description;
     private String intensity;
