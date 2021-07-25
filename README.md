@@ -20,4 +20,4 @@ In the context of a workout-simulator:
 - As a user, I want to be able to add an exercise to the potential workout options
 - As a user, I want to be able to remove an exercise from the potential workout options
 - As a user, I want to be able to change the intensity of a given workout option
-- As a user, I want to be able to view the list of workout options sorted by category of intensity
+- As a user, I want to be able to access the list of workout options sorted by category of intensity
