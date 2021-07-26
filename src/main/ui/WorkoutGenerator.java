@@ -136,6 +136,7 @@ public class WorkoutGenerator {
         desc = command;
 
         final boolean b = workout.getFinalWorkout().removeIf(act -> act.getDescription().equals(desc));
+        final boolean bb = workout.getOptions().removeIf(act -> act.getDescription().equals(desc));
     }
 
     //MODIFIES: this

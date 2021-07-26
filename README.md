@@ -2,7 +2,7 @@
 
 ## Workout Simulator
 
-**I plan on creating a project that simulates a 1 hour workout plan** based on some given inputs from the user, where
+**I plan on creating a project that simulates a workout plan** based on some given inputs from the user, where
 the inputs include:
 - the intensity of workout you desire
 - the body part/muscle group you would like to work on
@@ -17,6 +17,7 @@ explore more fitness variations to incorporate into my daily life.
 
 In the context of a workout-simulator:
 
+- As a user, I want to be able to generate a workout plan based off of input preferences from the user
 - As a user, I want to be able to add an exercise to the potential workout options
 - As a user, I want to be able to remove an exercise from the potential workout options
 - As a user, I want to be able to change the intensity of a given workout option
