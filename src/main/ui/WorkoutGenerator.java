@@ -110,7 +110,7 @@ public class WorkoutGenerator {
         Scanner input = new Scanner(System.in);
         String command = null;
         System.out.println("Put its description here! (ex. 5 x 20 pushups)");
-        command = input.next();
+        command = input.nextLine();
         desc = command;
         System.out.println("Intensity of workout! (easy, medium or hard)");
         command = input.next();
@@ -132,7 +132,7 @@ public class WorkoutGenerator {
         Scanner input = new Scanner(System.in);
         String command = null;
         System.out.println("Description of workout you want removed.");
-        command = input.next();
+        command = input.nextLine();
         desc = command;
 
         final boolean b = workout.getFinalWorkout().removeIf(act -> act.getDescription().equals(desc));
