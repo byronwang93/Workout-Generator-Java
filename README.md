@@ -22,3 +22,5 @@ In the context of a workout-simulator:
 - As a user, I want to be able to remove an exercise from the potential workout options
 - As a user, I want to be able to change the intensity of a given workout option
 - As a user, I want to be able to access the list of workout options
+- As a user, I want to be able to save the exercises that the user has inputted into the possible options list
+- As a user, I want to be able to load my previously saved list of workout options

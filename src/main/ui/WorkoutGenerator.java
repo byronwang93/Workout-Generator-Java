@@ -93,9 +93,14 @@ public class WorkoutGenerator {
 
         for (Activity act : workout.getFinalWorkout()) {
             if (act.getDescription().equals(desc)) {
+                workout.getOptions().remove(act);
+                workout.getFinalWorkout().remove(act);
                 act.changeIntensity(intensity);
+                workout.getOptions().add(act);
+                workout.getFinalWorkout().add(act);
+                return;
             } else {
-                System.out.printf("That exercise doesn't exist");
+                //nothing
             }
         }
     }
