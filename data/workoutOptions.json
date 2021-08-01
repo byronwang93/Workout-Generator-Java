@@ -1,32 +1,17 @@
 {
-  "options": [
-    {
-      "description": "plank",
-      "intensity": "hard",
-      "muscGroup": "arms",
-      "needsEquipment": "false"
-    },
-    {
-      "description": "squats",
-      "intensity": "medium",
-      "muscGroup": "legs",
-      "needsEquipment": "false"
-    }
-  ],
-  "finalWorkout": [
-    {
-    "description": "plank",
-    "intensity": "hard",
-    "muscGroup": "arms",
-    "needsEquipment": "false"
-  },
-    {
-      "description": "squats",
-      "intensity": "medium",
-      "muscGroup": "legs",
-      "needsEquipment": "false"
-    }
-  ],
-  "finalWorkoutDesc": [],
-  "name": "My workout"
+    "name": "My workout",
+    "options": [
+        {
+            "intensity": "hard",
+            "muscGroup": "arms",
+            "needsEquipment": false,
+            "description": "10 x 20 pushups"
+        },
+        {
+            "intensity": "hard",
+            "muscGroup": "arms",
+            "needsEquipment": true,
+            "description": "benchpress"
+        }
+    ]
 }

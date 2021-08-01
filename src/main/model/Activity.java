@@ -1,5 +1,6 @@
 package model;
 
+import org.json.JSONObject;
 import persistence.Writable;
 
 // Represents an activity with a description, an intensity level, a muscle group
@@ -55,4 +56,13 @@ public class Activity implements Writable {
         this.needsEquipment = equip;
     }
 
+    @Override
+    public JSONObject toJson() {
+        JSONObject json = new JSONObject();
+        json.put("description", description);
+        json.put("intensity", intensity);
+        json.put("muscGroup", muscGroup);
+        json.put("needsEquipment", needsEquipment);
+        return json;
+    }
 }

@@ -24,7 +24,7 @@ public class WorkoutGenerator {
     public WorkoutGenerator() throws FileNotFoundException {
         input = new Scanner(System.in);
         workout = new WorkoutOptions("My workout");
-//        jsonWriter = new JsonWriter(JSON_STORE);
+        jsonWriter = new JsonWriter(JSON_STORE);
         jsonReader = new JsonReader(JSON_STORE);
         runGenerator();
     }
@@ -63,7 +63,7 @@ public class WorkoutGenerator {
         } else if (command.equals("5")) {
             showOptions();
         } else if (command.equals("6")) {
-//            saveWorkout();
+            saveWorkout();
         } else if (command.equals("7")) {
             loadWorkout();
         } else if (command.equals("8")) {
@@ -255,6 +255,18 @@ public class WorkoutGenerator {
 
         System.out.println("\nEnjoy your workout!");
         System.exit(0);
+    }
+
+    //EFFECTS: saves the workout to file
+    private void saveWorkout() {
+        try {
+            jsonWriter.open();
+            jsonWriter.write(workout);
+            jsonWriter.close();
+            System.out.println("Saved " + workout.getName() + " to " + JSON_STORE);
+        } catch (FileNotFoundException e) {
+            System.out.println("Unable to write to file: " + JSON_STORE);
+        }
     }
 
     //MODIFIES: this

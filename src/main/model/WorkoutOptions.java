@@ -1,5 +1,7 @@
 package model;
 
+import org.json.JSONArray;
+import org.json.JSONObject;
 import persistence.Writable;
 
 import java.util.ArrayList;
@@ -86,5 +88,24 @@ public class WorkoutOptions implements Writable {
         for (Activity act : finalWorkout) {
             finalWorkoutDesc.add(act.getDescription());
         }
+    }
+
+    @Override
+    public JSONObject toJson() {
+        JSONObject json = new JSONObject();
+        json.put("name", name);
+        json.put("options", optionsToJson());
+        return json;
+    }
+
+    //EFFECTS: returns options in this workout as a JSON array
+    private JSONArray optionsToJson() {
+        JSONArray jsonArray = new JSONArray();
+
+        for (Activity act : options) {
+            jsonArray.put(act.toJson());
+        }
+
+        return jsonArray;
     }
 }

@@ -30,9 +30,9 @@ class WorkoutOptionsTest {
 
     @Test
     void testAddActivity() {
-        assertEquals(3, options.getOptions().size());
+        assertEquals(0, options.getOptions().size());
         options.addActivity(act1);
-        assertEquals(4, options.getOptions().size());
+        assertEquals(1, options.getOptions().size());
     }
 
     @Test
@@ -40,7 +40,7 @@ class WorkoutOptionsTest {
         options.addActivity(act3);
         options.addActivity(act4);
         assertTrue(options.removeActivity(act4));
-        assertEquals(options.getOptions().size(), 4);
+        assertEquals(options.getOptions().size(), 1);
     }
 
     @Test
@@ -48,7 +48,7 @@ class WorkoutOptionsTest {
         options.addActivity(act3);
         options.addActivity(act4);
         assertFalse(options.removeActivity(act1));
-        assertEquals(options.getOptions().size(), 5);
+        assertEquals(options.getOptions().size(), 2);
     }
 
     @Test
@@ -69,7 +69,7 @@ class WorkoutOptionsTest {
         options.addActivity(act3);
         options.addActivity(act4);
         options.filterMuscGroup("arms");
-        assertEquals(options.getFinalWorkout().size(), 4);
+        assertEquals(options.getFinalWorkout().size(), 2);
         assertTrue(options.getFinalWorkout().contains(act1));
         assertTrue(options.getFinalWorkout().contains(act4));
     }
@@ -87,8 +87,9 @@ class WorkoutOptionsTest {
 
     @Test
     void testGettingFinalWorkoutNames() {
+        options.addActivity(act2);
         options.setFinalWorkoutDesc();
-        assertTrue(options.getFinalWorkoutDesc().contains("squats"));
+        assertTrue(options.getFinalWorkoutDesc().contains("Squats"));
     }
 
 }
