@@ -1,0 +1,32 @@
+{
+  "options": [
+    {
+      "description": "plank",
+      "intensity": "hard",
+      "muscGroup": "arms",
+      "needsEquipment": "false"
+    },
+    {
+      "description": "squats",
+      "intensity": "medium",
+      "muscGroup": "legs",
+      "needsEquipment": "false"
+    }
+  ],
+  "finalWorkout": [
+    {
+      "description": "plank",
+      "intensity": "hard",
+      "muscGroup": "arms",
+      "needsEquipment": "false"
+    },
+    {
+      "description": "squats",
+      "intensity": "medium",
+      "muscGroup": "legs",
+      "needsEquipment": "false"
+    }
+  ],
+  "finalWorkoutDesc": [],
+  "name": "My workout"
+}

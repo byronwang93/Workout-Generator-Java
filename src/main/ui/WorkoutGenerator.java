@@ -1,5 +1,7 @@
 package ui;
 
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
@@ -7,14 +9,23 @@ import java.util.Scanner;
 
 import model.Activity;
 import model.WorkoutOptions;
+import persistence.JsonReader;
+import persistence.JsonWriter;
 
 // Workout generator application
 public class WorkoutGenerator {
+    private static final String JSON_STORE = "./data/workoutOptions.json";
     private WorkoutOptions workout;
     private Scanner input;
+    private JsonWriter jsonWriter;
+    private JsonReader jsonReader;
 
-    //EFFECTS: runs the workout generator
-    public WorkoutGenerator() {
+    //EFFECTS: constructs workout and runs the workout generator
+    public WorkoutGenerator() throws FileNotFoundException {
+        input = new Scanner(System.in);
+        workout = new WorkoutOptions("My workout");
+//        jsonWriter = new JsonWriter(JSON_STORE);
+        jsonReader = new JsonReader(JSON_STORE);
         runGenerator();
     }
 
@@ -52,6 +63,10 @@ public class WorkoutGenerator {
         } else if (command.equals("5")) {
             showOptions();
         } else if (command.equals("6")) {
+//            saveWorkout();
+        } else if (command.equals("7")) {
+            loadWorkout();
+        } else if (command.equals("8")) {
             System.exit(0);
         } else {
             System.out.println("Input not valid.");
@@ -164,7 +179,7 @@ public class WorkoutGenerator {
     //MODIFIES: this
     //EFFECTS: initializes workout options
     private void initialize() {
-        workout = new WorkoutOptions();
+        workout = new WorkoutOptions("My workout");
         input = new Scanner(System.in);
     }
 
@@ -176,7 +191,9 @@ public class WorkoutGenerator {
         System.out.println("- Remove an activity (enter 3)");
         System.out.println("- Change the intensity of an existing option (enter 4)");
         System.out.println("- View the possible workout options (enter 5)");
-        System.out.println("- Quit (enter 6)");
+        System.out.println("- Save current workout options to file (enter 6)");
+        System.out.println("- Load workout options from file (enter 7)");
+        System.out.println("- Quit (enter 8)");
     }
 
     //EFFECTS: displays a menu of intensities to the user
@@ -240,5 +257,14 @@ public class WorkoutGenerator {
         System.exit(0);
     }
 
-
+    //MODIFIES: this
+    //EFFECTS: loads workout from file
+    private void loadWorkout() {
+        try {
+            workout = jsonReader.read();
+            System.out.println("Loaded " + workout.getName() + " from " + JSON_STORE);
+        } catch (IOException e) {
+            System.out.println("Unable to read from file: " + JSON_STORE);
+        }
+    }
 }

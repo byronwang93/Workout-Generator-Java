@@ -1,55 +1,35 @@
 package model;
 
+import persistence.Writable;
+
 import java.util.ArrayList;
 import java.util.List;
 
 //Represents a list of the possible activities that the generator can select from. Contains fields that
 //represent the options split by intensity levels, the final workout list, a list of the final workout list's
 //activity names and 3 initial exercises
-public class WorkoutOptions {
+public class WorkoutOptions implements Writable {
+    private String name;
     private List<Activity> options;
-    private List<Activity> easyOptions;
-    private List<Activity> mediumOptions;
-    private List<Activity> hardOptions;
     private List<Activity> finalWorkout;
     private List<String> finalWorkoutDesc;
-    private Activity act1;
-    private Activity act2;
-    private Activity act3;
 
     //EFFECTS: constructs a new list of workout options to choose from and initializes the possible options with 3
     // starting activities to choose from (more added later)
-    public WorkoutOptions() {
+    public WorkoutOptions(String name) {
+        this.name = name;
         options = new ArrayList<>();
-        easyOptions = new ArrayList<>();
-        mediumOptions = new ArrayList<>();
-        hardOptions = new ArrayList<>();
         finalWorkout = new ArrayList<>();
         finalWorkoutDesc = new ArrayList<>();
-        act1 = new Activity("pushups", "hard", "arms", false);
-        act2 = new Activity("squats", "medium", "legs", false);
-        act3 = new Activity("plank", "hard", "arms", false);
-        addActivity(act1);
-        addActivity(act2);
-        addActivity(act3);
-
     }
 
     //getters
+    public String getName() {
+        return name;
+    }
+
     public List<Activity> getOptions() {
         return options;
-    }
-
-    public List<Activity> getEasyOptions() {
-        return easyOptions;
-    }
-
-    public List<Activity> getMediumOptions() {
-        return mediumOptions;
-    }
-
-    public List<Activity> getHardOptions() {
-        return hardOptions;
     }
 
     public List<Activity> getFinalWorkout() {
@@ -66,16 +46,6 @@ public class WorkoutOptions {
     public void addActivity(Activity act) {
         options.add(act);
         finalWorkout.add(act);
-//        finalWorkoutDesc.add(act.getDescription());
-        if (act.getIntensity().equals("easy")) {
-            easyOptions.add(act);
-        }
-        if (act.getIntensity().equals("medium")) {
-            mediumOptions.add(act);
-        }
-        if (act.getIntensity().equals("hard")) {
-            hardOptions.add(act);
-        }
     }
 
     //MODIFIES: this

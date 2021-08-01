@@ -1,8 +1,10 @@
 package model;
 
+import persistence.Writable;
+
 // Represents an activity with a description, an intensity level, a muscle group
 // and whether or not it needs equipment
-public class Activity {
+public class Activity implements Writable {
     private String description;
     private String intensity;
     private String muscGroup;

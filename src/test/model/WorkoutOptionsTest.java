@@ -16,22 +16,23 @@ class WorkoutOptionsTest {
 
     @BeforeEach
     void runBefore() {
-        options = new WorkoutOptions();
+        options = new WorkoutOptions("My workout");
         act1 = new Activity("Push-ups", "medium", "arms", false);
         act2 = new Activity("Squats", "hard", "legs", false);
         act3 = new Activity("Plank", "easy", "core", false);
         act4 = new Activity("Bench-press", "medium", "arms", true);
     }
 
+    @Test
+    void testWorkoutOptionsName() {
+        assertEquals("My workout", options.getName());
+    }
 
     @Test
     void testAddActivity() {
         assertEquals(3, options.getOptions().size());
         options.addActivity(act1);
         assertEquals(4, options.getOptions().size());
-        assertEquals(0, options.getEasyOptions().size());
-        assertEquals(2, options.getMediumOptions().size());
-        assertEquals(2, options.getHardOptions().size());
     }
 
     @Test
