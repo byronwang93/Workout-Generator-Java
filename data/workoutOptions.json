@@ -12,6 +12,12 @@
             "muscGroup": "arms",
             "needsEquipment": true,
             "description": "benchpress"
+        },
+        {
+            "intensity": "medium",
+            "muscGroup": "legs",
+            "needsEquipment": false,
+            "description": "5 x 10 squats"
         }
     ]
 }

@@ -56,6 +56,7 @@ public class Activity implements Writable {
         this.needsEquipment = equip;
     }
 
+    //EFFECTS: returns this as JSON object
     @Override
     public JSONObject toJson() {
         JSONObject json = new JSONObject();
