@@ -13,6 +13,7 @@ import java.nio.file.Paths;
 import java.util.stream.Stream;
 
 // Represents a reader that reads workoutOptions from JSON data stored in file
+// Template cited from the JsonSerializationDemo project
 public class JsonReader {
     private String source;
 

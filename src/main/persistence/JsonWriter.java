@@ -8,6 +8,7 @@ import java.io.FileNotFoundException;
 import java.io.PrintWriter;
 
 // Represents a writer that writes JSON representation of workout to file
+// Template cited from the JsonSerializationDemo project
 public class JsonWriter {
     private static final int TAB = 4;
     private PrintWriter writer;
