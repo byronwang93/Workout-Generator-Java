@@ -30,6 +30,12 @@
             "muscGroup": "arms",
             "needsEquipment": true,
             "description": "benchpress"
+        },
+        {
+            "intensity": "hard",
+            "muscGroup": "arms",
+            "needsEquipment": false,
+            "description": "hi"
         }
     ]
 }

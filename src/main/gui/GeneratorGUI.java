@@ -14,6 +14,13 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.List;
 
+
+// CITATIONS:
+// - Java gui basics learned from https://www.youtube.com/watch?v=Kmgo00avvEw&ab_channel=BroCode
+// - learned how to use action listener https://docs.oracle.com/javase/tutorial/uiswing/events/actionlistener.html
+// - sound was influenced from http://suavesnippets.blogspot.com/2011/06/add-sound-on-jbutton-click-in-java.html
+// - wav files were found from https://www.wavsource.com/sfx/sfx2.htm
+
 // Workout generator GUI
 public class GeneratorGUI extends JFrame implements ActionListener {
     private WorkoutOptions workoutOptions;
@@ -73,7 +80,7 @@ public class GeneratorGUI extends JFrame implements ActionListener {
 
         addPanel = new JPanel();
         addPanel.setBounds(0,250,300,350);
-        addPanel.setBackground(Color.BLUE);
+        addPanel.setBackground(Color.CYAN);
 
         addPanelLabelsAndTextFields();
 
