@@ -89,6 +89,7 @@ class WorkoutOptionsTest {
     void testGettingFinalWorkoutNames() {
         options.addActivity(act2);
         options.setFinalWorkoutDesc();
+        assertFalse(options.getFinalWorkoutIntensity().isEmpty());
         assertTrue(options.getFinalWorkoutDesc().contains("Squats"));
     }
 
