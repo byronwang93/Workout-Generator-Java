@@ -15,6 +15,7 @@ public class WorkoutOptions implements Writable {
     private List<Activity> options;
     private List<Activity> finalWorkout;
     private List<String> finalWorkoutDesc;
+    private List<String> finalWorkoutIntensity;
 
     //EFFECTS: constructs a new list of workout options to choose from and initializes the possible options with 3
     // starting activities to choose from (more added later)
@@ -23,6 +24,7 @@ public class WorkoutOptions implements Writable {
         options = new ArrayList<>();
         finalWorkout = new ArrayList<>();
         finalWorkoutDesc = new ArrayList<>();
+        finalWorkoutIntensity = new ArrayList<>();
     }
 
     //getters
@@ -40,6 +42,10 @@ public class WorkoutOptions implements Writable {
 
     public List<String> getFinalWorkoutDesc() {
         return finalWorkoutDesc;
+    }
+
+    public List<String> getFinalWorkoutIntensity() {
+        return finalWorkoutIntensity;
     }
 
     //MODIFIES: this
@@ -87,6 +93,7 @@ public class WorkoutOptions implements Writable {
     public void setFinalWorkoutDesc() {
         for (Activity act : finalWorkout) {
             finalWorkoutDesc.add(act.getDescription());
+            finalWorkoutIntensity.add(act.getIntensity());
         }
     }
 

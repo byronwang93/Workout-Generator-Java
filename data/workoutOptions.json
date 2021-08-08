@@ -8,16 +8,28 @@
             "description": "10 x 20 pushups"
         },
         {
+            "intensity": "medium",
+            "muscGroup": "legs",
+            "needsEquipment": false,
+            "description": "5 x 20 jumpsquats"
+        },
+        {
+            "intensity": "easy",
+            "muscGroup": "legs",
+            "needsEquipment": false,
+            "description": "run 10 laps"
+        },
+        {
+            "intensity": "easy",
+            "muscGroup": "arms",
+            "needsEquipment": false,
+            "description": "Eat a big mac"
+        },
+        {
             "intensity": "hard",
             "muscGroup": "arms",
             "needsEquipment": true,
             "description": "benchpress"
-        },
-        {
-            "intensity": "medium",
-            "muscGroup": "legs",
-            "needsEquipment": false,
-            "description": "5 x 10 squats"
         }
     ]
 }

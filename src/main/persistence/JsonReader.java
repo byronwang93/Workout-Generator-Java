@@ -61,26 +61,6 @@ public class JsonReader {
         }
     }
 
-//    //MODIFIES: wo
-//    //EFFECTS: parses options from JSON object and adds it to workoutOptions
-//    private void addFinalWorkout(WorkoutOptions wo, JSONObject jsonObject) {
-//        JSONArray jsonArray = jsonObject.getJSONArray("finalWorkout");
-//        for (Object json : jsonArray) {
-//            JSONObject nextOption = (JSONObject) json;
-//            addOption(wo, nextOption);
-//        }
-//    }
-
-//    //MODIFIES: wo
-//    //EFFECTS: parses options from JSON object and adds it to workoutOptions
-//    private void addFinalWorkoutDesc(WorkoutOptions wo, JSONObject jsonObject) {
-//        JSONArray jsonArray = jsonObject.getJSONArray("finalWorkoutDesc");
-//        for (Object json : jsonArray) {
-//            JSONObject nextOption = (JSONObject) json;
-//            addOptionDesc(wo, nextOption);
-//        }
-//    }
-
     //MODIFIES: wo
     //EFFECTS: parses option from JSON object and adds it to workoutOptions
     private void addOption(WorkoutOptions wo, JSONObject jsonObject) {
@@ -91,15 +71,4 @@ public class JsonReader {
         Activity activity = new Activity(description, intensity, muscGroup, needsEquipment);
         wo.addActivity(activity);
     }
-
-//    //MODIFIES: wo
-//    //EFFECTS: parses option from JSON object and adds it to workoutOptions
-//    private void addOptionDesc(WorkoutOptions wo, JSONObject jsonObject) {
-//        String description = jsonObject.getString("description");
-//        String intensity = jsonObject.getString("intensity");
-//        String muscGroup = jsonObject.getString("muscGroup");
-//        Boolean needsEquipment = jsonObject.getBoolean("needsEquipment");
-//        Activity activity = new Activity(description, intensity, muscGroup, needsEquipment);
-//        wo.getFinalWorkoutDesc().add(activity.getDescription());
-//    }
 }
