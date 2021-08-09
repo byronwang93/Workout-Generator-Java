@@ -330,7 +330,7 @@ public class GeneratorGUI extends JFrame implements ActionListener {
         equipment = equipTextField.getText();
     }
 
-    // MODIFIES: this
+    // MODIFIES: workoutOptions
     // EFFECTS: removes a given activity from the list of workout options
     private void removeActivityMethod() {
         final boolean b = workoutOptions.getFinalWorkout().removeIf(act -> act.getDescription().equals(actToRemove));
@@ -338,7 +338,7 @@ public class GeneratorGUI extends JFrame implements ActionListener {
         JOptionPane.showMessageDialog(null, "Removed activity!");
     }
 
-    // MODIFIES: this
+    // MODIFIES: this, workoutOptions
     // EFFECTS: adds a new activity given the user's inputs
     private void addActivityMethod() {
         Activity newAct = new Activity(desc, intensity, part, Boolean.parseBoolean(equipment));
@@ -360,7 +360,7 @@ public class GeneratorGUI extends JFrame implements ActionListener {
         }
     }
 
-    //MODIFIES: this
+    //MODIFIES: workoutOptions
     //EFFECTS: loads workout from file
     private void loadMethod() {
         jsonReader = new JsonReader(JSON_STORE);
