@@ -24,6 +24,7 @@ import java.util.List;
 // Workout generator GUI
 public class GeneratorGUI extends JFrame implements ActionListener {
     private WorkoutOptions workoutOptions;
+    private List<String> finalWorkoutIntensity;
     private static final String JSON_STORE = "./data/workoutOptions.json";
     private JsonReader jsonReader;
     private JsonWriter jsonWriter;
@@ -80,7 +81,7 @@ public class GeneratorGUI extends JFrame implements ActionListener {
 
         addPanel = new JPanel();
         addPanel.setBounds(0,250,300,350);
-        addPanel.setBackground(Color.CYAN);
+        addPanel.setBackground(Color.getHSBColor(230, 74, 69));
 
         addPanelLabelsAndTextFields();
 
@@ -124,8 +125,8 @@ public class GeneratorGUI extends JFrame implements ActionListener {
     // EFFECTS: adds panel labels, text fields and buttons to the removePanel
     private void removePanelSetup() {
         removePanel = new JPanel();
-        removePanel.setBounds(300,250,300,250);
-        removePanel.setBackground(Color.YELLOW);
+        removePanel.setBounds(300,250,300,350);
+        removePanel.setBackground(Color.getHSBColor(61, 76, 83));
         textField = new JTextField();
         textField.setPreferredSize(new Dimension(250,40));
         submitRemovalButton = new JButton("Submit");
@@ -140,8 +141,8 @@ public class GeneratorGUI extends JFrame implements ActionListener {
     // EFFECTS: adds panel labels, text fields and buttons to the switchIntensityPanel
     private void switchIntensityPanelSetup() {
         switchIntensityPanel = new JPanel();
-        switchIntensityPanel.setBounds(300,500,300,250);
-        switchIntensityPanel.setBackground(Color.GRAY);
+        switchIntensityPanel.setBounds(300,600,300,250);
+        switchIntensityPanel.setBackground(Color.getHSBColor(230, 74, 69));
         switchIntensityButton = new JButton("Switch Intensity");
         switchIntensityButton.addActionListener(this);
         saveSwitchingOptionsButton = new JButton("Save settings");
@@ -179,7 +180,7 @@ public class GeneratorGUI extends JFrame implements ActionListener {
     private void showOptionsPanelSetup() {
         showOptionsPanel = new JPanel();
         showOptionsPanel.setBounds(300,0,300,250);
-        showOptionsPanel.setBackground(Color.GREEN);
+        showOptionsPanel.setBackground(Color.getHSBColor(230, 74, 69));
         optionsLabel = new JLabel("These are your possible options: ");
     }
 
@@ -188,7 +189,7 @@ public class GeneratorGUI extends JFrame implements ActionListener {
     private void mainPanelSetup() {
         mainPanel = new JPanel();
         mainPanel.setBounds(0,0,300,250);
-        mainPanel.setBackground(Color.RED);
+        mainPanel.setBackground(Color.getHSBColor(61, 76, 83));
     }
 
     // MODIFIES: this
@@ -270,13 +271,16 @@ public class GeneratorGUI extends JFrame implements ActionListener {
     // MODIFIES: this
     // EFFECTS: switches the intensity of a chosen activity
     private void switchIntensityMethod() {
+        int index = -1;
         for (Activity act : workoutOptions.getFinalWorkout()) {
+            index++;
             if (act.getDescription().equals(targetDesc)) {
                 workoutOptions.getOptions().remove(act);
                 workoutOptions.getFinalWorkout().remove(act);
                 act.changeIntensity(newIntensity);
                 workoutOptions.getOptions().add(act);
                 workoutOptions.getFinalWorkout().add(act);
+                finalWorkoutIntensity.set(index, newIntensity);
                 return;
             } else {
                 //nothing
@@ -377,7 +381,7 @@ public class GeneratorGUI extends JFrame implements ActionListener {
         showOptionsPanel.removeAll();
         showOptionsPanel.add(optionsLabel);
         List<String> finalWorkoutDesc = workoutOptions.getFinalWorkoutDesc();
-        List<String> finalWorkoutIntensity = workoutOptions.getFinalWorkoutIntensity();
+        finalWorkoutIntensity = workoutOptions.getFinalWorkoutIntensity();
 
         for (Activity act : workoutOptions.getOptions()) {
             finalWorkoutDesc.add(act.getDescription());

@@ -22,20 +22,14 @@
         {
             "intensity": "easy",
             "muscGroup": "arms",
-            "needsEquipment": false,
-            "description": "Eat a big mac"
-        },
-        {
-            "intensity": "hard",
-            "muscGroup": "arms",
             "needsEquipment": true,
             "description": "benchpress"
         },
         {
-            "intensity": "hard",
+            "intensity": "medium",
             "muscGroup": "arms",
             "needsEquipment": false,
-            "description": "hi"
+            "description": "eating"
         }
     ]
 }
