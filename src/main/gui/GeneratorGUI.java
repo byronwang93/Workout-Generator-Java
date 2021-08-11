@@ -18,7 +18,7 @@ import java.util.List;
 // CITATIONS:
 // - Java gui basics learned from https://www.youtube.com/watch?v=Kmgo00avvEw&ab_channel=BroCode
 // - learned how to use action listener https://docs.oracle.com/javase/tutorial/uiswing/events/actionlistener.html
-// - sound was influenced from http://suavesnippets.blogspot.com/2011/06/add-sound-on-jbutton-click-in-java.html
+// - sound was influenced from http://suavesnippets-.blogspot.com/2011/06/add-sound-on-jbutton-click-in-java.html
 // - wav files were found from https://www.wavsource.com/sfx/sfx2.htm
 
 // Workout generator GUI

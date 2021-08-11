@@ -2,32 +2,32 @@
     "name": "My workout",
     "options": [
         {
-            "intensity": "hard",
-            "muscGroup": "arms",
-            "needsEquipment": false,
-            "description": "10 x 20 pushups"
-        },
-        {
             "intensity": "medium",
             "muscGroup": "legs",
             "needsEquipment": false,
             "description": "5 x 20 jumpsquats"
         },
         {
-            "intensity": "easy",
-            "muscGroup": "legs",
-            "needsEquipment": false,
-            "description": "run 10 laps"
-        },
-        {
-            "intensity": "easy",
+            "intensity": "hard",
             "muscGroup": "arms",
             "needsEquipment": true,
             "description": "benchpress"
         },
         {
+            "intensity": "easy",
+            "muscGroup": "core",
+            "needsEquipment": false,
+            "description": "plank"
+        },
+        {
+            "intensity": "easy",
+            "muscGroup": "legs",
+            "needsEquipment": false,
+            "description": "burpees"
+        },
+        {
             "intensity": "medium",
-            "muscGroup": "arms",
+            "muscGroup": "legs",
             "needsEquipment": false,
             "description": "eating"
         }

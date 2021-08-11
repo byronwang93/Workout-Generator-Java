@@ -24,3 +24,13 @@ In the context of a workout-simulator:
 - As a user, I want to be able to access the list of workout options
 - As a user, I want to be able to save the exercises that the user has inputted into the possible options list
 - As a user, I want to be able to load my previously saved list of workout options
+
+
+## Phase 4: Task 2
+
+I decided to implement the first Java language construct by editing a method in a class to throw an exception.
+In my WorkoutOptions class within the UI package, I modified the removeActivity method by making it throw an 
+InvalidRemovalException if the inputted exercise name to remove doesn't exist within the list of workout options.
+I also edited my test cases to test the functionality of my new checked Exception:
+- In WorkoutOptionsTest class, on line 41, accounted for when the exception is not expected
+- In WorkoutOptionsTest class, on line 55, accounted for when the exception is expected

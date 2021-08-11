@@ -2,6 +2,7 @@ package model;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import ui.InvalidRemovalException;
 
 import java.util.List;
 
@@ -35,19 +36,32 @@ class WorkoutOptionsTest {
         assertEquals(1, options.getOptions().size());
     }
 
+    //Added exception handling for phase 4 task 2
     @Test
     void testRemoveActivityThatExists() {
         options.addActivity(act3);
         options.addActivity(act4);
-        assertTrue(options.removeActivity(act4));
+        try {
+            options.removeActivity(act4);
+            //all good!
+        } catch (InvalidRemovalException e) {
+            fail("Unexpected exception was thrown");
+        }
         assertEquals(options.getOptions().size(), 1);
     }
 
+    //Added exception handling for phase 4 task 2
     @Test
     void testRemoveActivityThatDoesNotExist() {
         options.addActivity(act3);
         options.addActivity(act4);
-        assertFalse(options.removeActivity(act1));
+
+        try {
+            options.removeActivity(act1);
+            fail("Expected exception was not thrown.");
+        } catch (InvalidRemovalException e) {
+            //all good!
+        }
         assertEquals(options.getOptions().size(), 2);
     }
 

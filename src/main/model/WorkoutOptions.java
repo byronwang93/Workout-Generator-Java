@@ -3,6 +3,7 @@ package model;
 import org.json.JSONArray;
 import org.json.JSONObject;
 import persistence.Writable;
+import ui.InvalidRemovalException;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -57,16 +58,13 @@ public class WorkoutOptions implements Writable {
     }
 
     //MODIFIES: this
-    //EFFECTS: removes an activity from the list of options. If successful, return true
-    // otherwise, output false
-    public boolean removeActivity(Activity act) {
-        for (Activity activity : options) {
-            if (options.contains(act)) {
-                options.remove(act);
-                return true;
-            }
+    //EFFECTS: removes an activity from the list of options. Throws an exception if the activity entered doesn't exist
+    public void removeActivity(Activity act) throws InvalidRemovalException {
+        if (options.contains(act)) {
+            options.remove(act);
+        } else {
+            throw new InvalidRemovalException();
         }
-        return false;
     }
 
     //MODIFIES: this
