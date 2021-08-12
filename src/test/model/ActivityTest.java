@@ -2,6 +2,7 @@ package model;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import ui.InvalidIntensityException;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -27,8 +28,24 @@ class ActivityTest {
 
     @Test
     void testChangeActivityIntensity() {
-        act2.changeIntensity("Easy");
-        assertEquals("Easy", act2.getIntensity());
+        try {
+            act2.changeIntensity("easy");
+            //good
+        } catch (InvalidIntensityException e) {
+            fail("Unexpected exception was thrown");
+        }
+        assertEquals("easy", act2.getIntensity());
+    }
+
+    @Test
+    void testChangeActivityInvalidIntensity() {
+        try {
+            act2.changeIntensity("hihi");
+            fail("Expected exception was not thrown");
+        } catch (InvalidIntensityException e) {
+            //good
+        }
+        assertEquals("hard", act2.getIntensity());
     }
 
     @Test

@@ -5,6 +5,7 @@ import model.Activity;
 import model.WorkoutOptions;
 import persistence.JsonReader;
 import persistence.JsonWriter;
+import ui.InvalidIntensityException;
 
 import javax.swing.*;
 import java.awt.*;
@@ -277,7 +278,11 @@ public class GeneratorGUI extends JFrame implements ActionListener {
             if (act.getDescription().equals(targetDesc)) {
                 workoutOptions.getOptions().remove(act);
                 workoutOptions.getFinalWorkout().remove(act);
-                act.changeIntensity(newIntensity);
+                try {
+                    act.changeIntensity(newIntensity);
+                } catch (InvalidIntensityException e) {
+                    System.out.println("Invalid intensity entered!");
+                }
                 workoutOptions.getOptions().add(act);
                 workoutOptions.getFinalWorkout().add(act);
                 finalWorkoutIntensity.set(index, newIntensity);

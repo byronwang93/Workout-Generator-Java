@@ -27,10 +27,33 @@ In the context of a workout-simulator:
 
 
 ## Phase 4: Task 2
+I decided to implement the first Java language construct by making my project more robust through editing a method
+to be able to handle exceptions. Within the Activity class, I changed the implementation of the changeIntensity method
+to throw an InvalidIntensityException (an exception I created) whenever the user inputs an intensity that isn't
+"easy", "medium", or "hard". Afterwards, I changed the project in the following areas:
+- changed an existing test to account for when the exception is not expected
+- added a new test to account for when the exception is expected
+- changed the implementation of the changeIntensity methods in the GIU class and WorkoutGenerator class to have a
+try/catch for this method now.
 
-I decided to implement the first Java language construct by editing a method in a class to throw an exception.
+
+I also decided to edit a different method in a class to throw an exception.
 In my WorkoutOptions class within the UI package, I modified the removeActivity method by making it throw an 
 InvalidRemovalException if the inputted exercise name to remove doesn't exist within the list of workout options.
 I also edited my test cases to test the functionality of my new checked Exception:
 - In WorkoutOptionsTest class, on line 41, accounted for when the exception is not expected
 - In WorkoutOptionsTest class, on line 55, accounted for when the exception is expected
+
+## Phase 4: Task 3
+
+If I had more time to work on the project, a huge source of potential refactoring would be
+within my WorkoutGeneratorGUI class where I essentially had my entire GUI implemented in the class.
+This is an example of low cohesion (where my class serves more than a single function), so it would make more sense to 
+split up the functions into separate classes and make the WorkoutGeneratorGUI contain fields of these new classes.
+On a similar note, each button action event was implemented within the WorkoutGeneratorGUI class so it might have made
+more sense to implement the methods within the separate button classes.
+Additional refactoring of my code could be:
+- making my GUI look more modern (such as changing the font of text and/or adding different tabs)
+- clearing the text boxes in my gui every time the text is retrieved (this allows the user to enter a new value without
+  deleting the one value)
+- making my entire project more robust so that it handles exceptions 

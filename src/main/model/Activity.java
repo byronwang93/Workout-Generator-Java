@@ -2,6 +2,7 @@ package model;
 
 import org.json.JSONObject;
 import persistence.Writable;
+import ui.InvalidIntensityException;
 
 // Represents an activity with a description, an intensity level, a muscle group
 // and whether or not it needs equipment
@@ -46,8 +47,12 @@ public class Activity implements Writable {
     //REQUIRES: input either "hard", "medium", or "easy"
     //MODIFIES: this
     //EFFECTS: changes the intensity of this activity
-    public void changeIntensity(String intense) {
-        this.intensity = intense;
+    public void changeIntensity(String intense) throws InvalidIntensityException {
+        if (intense.equals("hard") | intense.equals("medium") | intense.equals("easy")) {
+            this.intensity = intense;
+        } else {
+            throw new InvalidIntensityException();
+        }
     }
 
     //MODIFIES: this

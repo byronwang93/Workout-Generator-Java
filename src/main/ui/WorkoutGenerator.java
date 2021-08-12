@@ -110,7 +110,11 @@ public class WorkoutGenerator {
             if (act.getDescription().equals(desc)) {
                 workout.getOptions().remove(act);
                 workout.getFinalWorkout().remove(act);
-                act.changeIntensity(intensity);
+                try {
+                    act.changeIntensity(intensity);
+                } catch (InvalidIntensityException e) {
+                    System.out.println("Invalid intensity entered");
+                }
                 workout.getOptions().add(act);
                 workout.getFinalWorkout().add(act);
                 return;
