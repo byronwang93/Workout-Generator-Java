@@ -53,7 +53,6 @@ split up the functions into separate classes and make the WorkoutGeneratorGUI co
 On a similar note, each button action event was implemented within the WorkoutGeneratorGUI class so it might have made
 more sense to implement the methods within the separate button classes.
 Additional refactoring of my code could be:
-- making my GUI look more modern (such as changing the font of text and/or adding different tabs)
-- clearing the text boxes in my gui every time the text is retrieved (this allows the user to enter a new value without
-  deleting the one value)
-- making my entire project more robust so that it handles exceptions 
+- making my entire project more robust so that it handles exceptions
+- put enums into the project because when users add a new activity, the intensity and muscle group only have 3 options
+each, so we already know the possible values beforehand, which would help improve the readability of the code.
