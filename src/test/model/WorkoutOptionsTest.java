@@ -2,9 +2,7 @@ package model;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import ui.InvalidRemovalException;
-
-import java.util.List;
+import exceptions.InvalidRemovalException;
 
 import static org.junit.jupiter.api.Assertions.*;
 

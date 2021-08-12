@@ -4,9 +4,9 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Locale;
 import java.util.Scanner;
 
+import exceptions.InvalidIntensityException;
 import model.Activity;
 import model.WorkoutOptions;
 import persistence.JsonReader;
@@ -96,16 +96,20 @@ public class WorkoutGenerator {
         String intensity;
         String desc;
         Scanner input2 = new Scanner(System.in);
-        String command2 = null;
         System.out.println("Description of activity you want to change");
-        command2 = input2.next();
+        String command2 = input2.next();
         desc = command2;
         Scanner input = new Scanner(System.in);
-        String command = null;
         System.out.println("What intensity do you want to change your exercise option to? (easy, medium, or hard)");
-        command = input.next();
+        String command = input.next();
         intensity = command;
 
+        changeIntensityMethod(intensity, desc);
+    }
+
+    //MODIFIES: this
+    //EFFECTS: changes the intensity of the user's desired workout
+    private void changeIntensityMethod(String intensity, String desc) {
         for (Activity act : workout.getFinalWorkout()) {
             if (act.getDescription().equals(desc)) {
                 workout.getOptions().remove(act);

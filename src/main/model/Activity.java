@@ -2,7 +2,7 @@ package model;
 
 import org.json.JSONObject;
 import persistence.Writable;
-import ui.InvalidIntensityException;
+import exceptions.InvalidIntensityException;
 
 // Represents an activity with a description, an intensity level, a muscle group
 // and whether or not it needs equipment

@@ -5,7 +5,7 @@ import model.Activity;
 import model.WorkoutOptions;
 import persistence.JsonReader;
 import persistence.JsonWriter;
-import ui.InvalidIntensityException;
+import exceptions.InvalidIntensityException;
 
 import javax.swing.*;
 import java.awt.*;
